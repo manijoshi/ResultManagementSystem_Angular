@@ -1,0 +1,19 @@
+.table {
+    margin: auto;
+    width: 50% !important; 
+ }
+ @media only screen and (max-width: 900px) {
+    .table {
+        margin: auto;
+        width: 100% !important;
+     }
+     .add{
+      top: 100px;right: 0px !important; position: absolute;
+     }
+  }
+.add{
+   top: 100px;right: 300px; position: absolute;
+}
+.logout{
+   top: 20px;right: 10px; position: absolute;
+}

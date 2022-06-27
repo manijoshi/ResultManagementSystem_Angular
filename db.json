@@ -1,0 +1,15 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "rollNo": "1",
+      "name": "Manisha",
+      "dob": "2022-06-15",
+      "score": "900"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

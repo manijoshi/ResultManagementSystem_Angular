@@ -1,0 +1,48 @@
+<app-header></app-header>
+<button routerLink="/" class="btn btn-danger" style="top: 20px;right: 10px; position: absolute;">
+    Back
+</button>
+<div class="row mt-5">
+    <h2 class="text-center"> Find Result </h2>
+    <form [formGroup]="studentFormValue"  (ngSubmit)="findResult()" style="width: 50% !important; margin: 0 auto;">
+        <div class="form-group mt-3">
+            <label for="InputRollNo">Roll No</label>
+            <input type="text" formControlName="rollNo" class="form-control" id="InputRollNo"
+                placeholder="Enter Roll no."  required>
+        </div>
+        <div class="form-group mt-2">
+            <label for="InputDOB">Date of Birth</label>
+            <input type="date" formControlName="dob" class="form-control" id="InputDOB"
+                placeholder="Enter Date of Birth"  required>
+        </div>
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary me-3" >Search</button>
+            <button type="button" class="btn btn-secondary" (click)="studentFormValue.reset()">Clear</button>
+        </div>
+    </form>
+
+    
+</div>
+
+<div class="m-2 row" *ngIf="showResult">
+    <div class="col-8 result mt-3" style="width: 50% !important; margin: 0 auto;">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Roll no.</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{studentResultData[0].rollNo}}</td>
+                    <td>{{studentResultData[0].name}}</td>
+                    <td>{{studentResultData[0].dob}}</td>
+                    <td>{{studentResultData[0].score}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

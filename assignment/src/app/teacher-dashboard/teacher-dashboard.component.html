@@ -1,0 +1,115 @@
+<app-header></app-header>
+<div class="d-flex" >
+    <button routerLink="/" class="btn btn-danger logout">
+        Logout
+    </button>
+</div>
+<button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-success me-2 add">
+    Add Record
+</button>
+<table class="table mt-5">
+    <thead>
+        <tr >
+            <th scope="col">Roll No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Score</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of resultData">
+            <td> {{row.rollNo}} </td>
+            <td> {{row.name}} </td>
+            <td> {{row.dob}} </td>
+            <td> {{row.score}} </td>
+            <td>
+                <button type="button" data-toggle="modal" data-target="#editModal" class="btn btn-warning mx-2 mb-1" (click)="onEdit(row)">Edit</button>
+                <button class="btn btn-danger mb-1" (click)="deleteResult(row)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<!--Add Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New Result</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" data-toggle="validator" [formGroup]="formValue">
+                    <div class="form-group">
+                        <label for="InputRollNo">Roll No</label>
+                        <input type="text" formControlName="rollNo" class="form-control" id="InputRollNo" placeholder="Enter Roll no."  required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="InputName">Name</label>
+                        <input type="text" formControlName="name" class="form-control" id="InputName" placeholder="Enter Name"  required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="InputDOB">Date of Birth</label>
+                        <input type="date" formControlName="dob" class="form-control" id="InputDOB" placeholder="Enter Date of Birth"  required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="InputScore">Score</label>
+                        <input type="text" formControlName="score" class="form-control" id="InputScore" placeholder="Enter Score"  required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="postResult()">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Edit Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Result</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="form-group">
+                        <label for="InputRollNo">Roll No</label>
+                        <input type="text" formControlName="rollNo" class="form-control" id="InputRollNo" placeholder="Enter Roll no.">
+                    </div>
+                    <div class="form-group">
+                        <label for="InputName">Name</label>
+                        <input type="text" formControlName="name" class="form-control" id="InputName" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="InputDOB">Date of Birth</label>
+                        <input type="date" formControlName="dob" class="form-control" id="InputDOB" placeholder="Enter Date of Birth">
+                    </div>
+                    <div class="form-group">
+                        <label for="InputScore">Score</label>
+                        <input type="text" formControlName="score" class="form-control" id="InputScore" placeholder="Enter Score">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="close" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="updateResult()">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+

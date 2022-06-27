@@ -1,0 +1,13 @@
+button{
+    margin: 2rem;
+    background-color: whitesmoke;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+}
+button:hover{
+    background: rgb(75, 182, 225);
+    color: white;
+}
+.main{
+    margin-top: 8rem;
+}

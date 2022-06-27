@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "rollNo": "1",
+      "name": "Tan1",
+      "dob": "2022-06-12",
+      "score": "500"
+    },
+    {
+      "id": 2,
+      "rollNo": "2",
+      "name": "Manisha Joshi",
+      "dob": "2000-08-07",
+      "score": "100"
+    },
+    {
+      "id": 3,
+      "rollNo": "3",
+      "name": "Manish",
+      "dob": "2022-06-14",
+      "score": "80"
+    },
+    {
+      "id": 4,
+      "rollNo": "4",
+      "name": "Shantanu",
+      "dob": "2022-06-24",
+      "score": "70"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
